@@ -2,6 +2,8 @@
 import Header from '../components/Header.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import Content from '../components/containers/Content.astro'
+const { frontmatter } = Astro.props;
 
 ---
 
@@ -13,19 +15,17 @@ import Footer from '../components/Footer.astro';
 		<meta name="generator" content={Astro.generator} />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="../styles/style.css">
-		<title>Astro</title>
+		<title>{frontmatter.title}</title>
 	</head>
 	<body class = "bg-light-gradient min-h-screen font-sans text-dark-blue">
 		<Header/>
 		<Navigation/>
-		<div class = "flex shrink justify-center px-32 py-4">
-			<div class = "container min-w-64 md:mx-auto border-2 border-dark-blue bg-[#FDF9FF] shadow-[rgba(22,33,92,0.75)_8px_8px_0px_0px]">
-				<header class="border-b-2 border-dark-blue"><h6 class = "bg-[#FFEFFF] text-xl font-semi-bold italic p-2">welcome</h6></header>
-				<div class= "p-4">
-				<h1 class="font-semibold text-3xl">Hello World ✧˖°. ♡</h1>
-				<p class = "text-base">My name is Tiana and I’m a senior studying at computer science and cultural anthropology @ Duke University. Here you will find my musings.
-				</p>
-			</div>
+		<div class = "flex justify-center flex-col items-center px-32 py-4">
+			<Content>
+                <span slot = "headercontent">{frontmatter.title}</span>
+                <span slot ="headerdate">{frontmatter.date}</span>
+				<span slot= "content">{}</span>
+            </Content>
 			</div>
 		</div>
 		<Footer/>
