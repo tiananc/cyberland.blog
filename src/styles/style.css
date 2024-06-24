@@ -7,6 +7,31 @@ h1 {
     @apply font-semibold text-3xl;
   }
   
+h2 {
+    @apply font-semibold text-2xl;
+  }
+  
+  @layer components {
+    
+    a:hover {
+      @apply underline;
+    }
+
+    #web-title a:hover {
+      @apply no-underline;
+    }
+  } 
+
 p {
     @apply text-base;
+  }
+
+  .star-bulleted-list {
+    list-style-type: '★';
+    padding-left: 20px;
+  }
+
+  .bulleted-list {
+    list-style-type: disc;
+    padding-left: 20px;
   }

@@ -1,8 +1,9 @@
 ---
 import Header from '../components/Header.astro';
+import '../styles/style.css';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-import Content from '../components/containers/Content.astro'
+import Content from '../components/Content.astro'
 const { frontmatter } = Astro.props;
 
 ---
@@ -24,7 +25,7 @@ const { frontmatter } = Astro.props;
 			<Content>
                 <span slot = "headercontent">{frontmatter.title}</span>
                 <span slot ="headerdate">{frontmatter.date}</span>
-				<span slot= "content">{}</span>
+				<slot slot = "content"></slot>
             </Content>
 			</div>
 		</div>

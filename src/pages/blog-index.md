@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/BlogIndex.astro
-title: blog
+title: adventures in cyberland
 
 
 ---
