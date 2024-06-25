@@ -1,5 +1,11 @@
 ---
+
 import { getCollection } from 'astro:content';
+const blogpost = await getCollection('posts');
+
+
+
+
 import Header from '../components/Header.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
@@ -21,8 +27,21 @@ import Content from '../components/Content.astro'
 		<Header/>
 		<Navigation/>
 		<div class = "flex justify-center flex-col items-center px-32 py-4">
-			</div>
+			<ul>
+			{ blogpost.map((posts) => 
+				<li>
+				  <Content>
+					<span slot = "headercontent">{blogpost}</span>
+					<span slot ="headerdate">{blogpost}</span>
+					<slot slot = "content">{blogpost}</slot>
+					<span class = "flex row-end">href={`/posts/${posts.slug}`}</span>
+				   </Content>
+				 </li>
+					
+				)}
+			</ul>
 		</div>
+	</div>
 		<Footer/>
 	</body>
 </html>
