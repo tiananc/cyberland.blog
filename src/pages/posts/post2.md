@@ -1,12 +1,12 @@
 ---
 layout: "../../layouts/ContentBase.astro"
-title: "adventures in cyberland"
-date: 2024-06-25
+title: "Second Post Ever"
+date: "2024-06-26"
 tags: [firsts]
 summary: "My second post."
 
 ---
 
-## Just testing things out pt2 </b>
+## Just testing things out pt2 </b></b>
 
 You know the drill.
