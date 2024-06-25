@@ -1,8 +1,8 @@
 ---
 layout: "../../layouts/ContentBase.astro"
-title: "Second Post Ever"
-date: "2024-06-26"
-tags: ["firsts"]
+title: "second post ever"
+date: "2024-06-25"
+tags: ["seconds"]
 summary: "My second post."
 
 ---

@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/ContentBase.astro"
-title: "First Post Ever"
+title: "first post ever"
 date: "2024-06-25"
 tags: ["firsts"]
 summary: "My first post, woo!"

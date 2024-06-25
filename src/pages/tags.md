@@ -1,6 +1,5 @@
 ---
-layout: ../layouts/ContentBase.astro
+layout: ../layouts/Blog/Tags.astro
 title: tags
-tags: [firsts]
 
 ---

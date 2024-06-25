@@ -27,11 +27,11 @@ p {
   }
 
   .star-bulleted-list {
-    list-style-type: '★';
-    padding-left: 20px;
+    list-style-type: 'ᯓ★ ';
+    padding-left: 24px;
   }
 
   .bulleted-list {
     list-style-type: disc;
-    padding-left: 20px;
+    padding-left: 24px;
   }
