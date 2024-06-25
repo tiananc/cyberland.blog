@@ -26,7 +26,7 @@ import Content from '../../components/Content.astro'
 		<Navigation/>
 		<div class = "flex justify-center flex-col items-center px-32 py-4">
 			
-			{allposts.toReversed().map((post) => 
+			{allposts.map((post) => 
 			
 			<Content>
 				<span slot = "headercontent">{post.frontmatter.title}</span>
