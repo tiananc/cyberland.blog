@@ -1,0 +1,47 @@
+---
+import FilteredArchive from '../../../layouts/Blog/Tags/FilteredArchive.astro';
+import Content from '../../../components/Content.astro'
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob('../../posts/*.md');
+
+  const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+
+  
+  return uniqueTags.map((tag) => {
+  const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
+
+  const sortedTaggedPosts= filteredPosts.sort((a, b) => {
+  const dateA = new Date(a.frontmatter.date).getDate();
+  const dateB = new Date(b.frontmatter.date).getDate();
+  return dateB - dateA; 
+});
+    return {
+      params: { tag },
+      props: { posts: sortedTaggedPosts },
+    };
+});
+}
+
+
+const {tag} = Astro.params;
+const {posts} = Astro.props;
+
+---
+
+
+<FilteredArchive>
+    {posts.map((post) => 
+		<h2 class = "italic pb-4 text-2xl">posts tagged "{tag}"</h2>
+		<Content>
+				<span slot = "headercontent">{post.frontmatter.title}</span>
+                <span slot ="headerdate">{post.frontmatter.date}</span>
+				<span slot = "content">
+					<p class = "">{post.frontmatter.summary}</p>
+					<span>
+					<a class = "flex justify-end" href={post.url}>read more ᯓ★</a>
+					</span>
+				</span>
+		</Content>
+		)}
+</FilteredArchive>

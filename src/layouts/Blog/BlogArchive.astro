@@ -1,6 +1,14 @@
 ---
 
 const allposts = await Astro.glob('../../pages/posts/*.md');
+
+const sortedposts = allposts.sort((a, b) => {
+  const dateA = new Date(a.frontmatter.date).getDate();
+  const dateB = new Date(b.frontmatter.date).getDate();
+  return dateB - dateA; 
+
+});
+
 import Header from '../../components/Header.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
@@ -22,10 +30,9 @@ import Content from '../../components/Content.astro'
 		<Header/>
 		<Navigation/>
 		<div class = "flex justify-center flex-col items-center px-32 py-4">
+			{sortedposts.map((post) => 
 			
-			{allposts.map((post) => 
-			
-			<Content>
+		<Content>
 				<span slot = "headercontent">{post.frontmatter.title}</span>
                 <span slot ="headerdate">{post.frontmatter.date}</span>
 				<span slot = "content">
@@ -34,7 +41,6 @@ import Content from '../../components/Content.astro'
 					<a class = "flex justify-end" href={post.url}>read more ᯓ★</a>
 					</span>
 				</span>
-			
 		</Content>
 		)}
 

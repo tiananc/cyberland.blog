@@ -27,12 +27,13 @@ p {
   }
 
   :root {
-    --responsive-font-size: clamp(1.25rem, 2vw); /* Base size 1.25rem (text-xl), scales with 3vw */
+    --responsive-font-size: clamp(1.25rem, 1vw); 
   }
   
   .text-responsive-xl {
     font-size: var(--responsive-font-size);
   }
+
 
   .truncate-text {
     overflow: hidden;
