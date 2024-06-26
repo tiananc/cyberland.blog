@@ -31,8 +31,8 @@ const {posts} = Astro.props;
 
 
 <FilteredArchive>
+ <span slot="taggedTitle"><h2 class = "italic pb-4 text-2xl flex justify-center text-center">posts tagged "{tag}"</h2></span> 
     {posts.map((post) => 
-		<h2 class = "italic pb-4 text-2xl">posts tagged "{tag}"</h2>
 		<Content>
 				<span slot = "headercontent">{post.frontmatter.title}</span>
                 <span slot ="headerdate">{post.frontmatter.date}</span>
@@ -44,4 +44,5 @@ const {posts} = Astro.props;
 				</span>
 		</Content>
 		)}
+
 </FilteredArchive>

@@ -18,6 +18,7 @@ import Footer from '../../../components/Footer.astro';
 	<body class = "bg-light-gradient min-h-screen font-sans text-dark-blue">
 		<Header/>
 		<Navigation/>
+		<slot name="taggedTitle"></slot>
 		<div class = "flex justify-center flex-col items-center px-32 py-4">
             <slot></slot>
 		</div>
