@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/Blog/Tags.astro
+layout: ../layouts/Blog/Tags/Tags.astro
 title: tags
 
 ---

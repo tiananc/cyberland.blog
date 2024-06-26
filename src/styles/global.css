@@ -26,6 +26,26 @@ p {
     @apply text-base;
   }
 
+  :root {
+    --responsive-font-size: clamp(1.25rem, 2vw); /* Base size 1.25rem (text-xl), scales with 3vw */
+  }
+  
+  .text-responsive-xl {
+    font-size: var(--responsive-font-size);
+  }
+
+  .truncate-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    transition: white-space 0.3s ease;
+  }
+
+  .truncate-text:hover {
+    white-space: normal;
+  }
+
   .star-bulleted-list {
     list-style-type: 'ᯓ★ ';
     padding-left: 24px;

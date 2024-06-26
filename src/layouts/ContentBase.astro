@@ -24,7 +24,7 @@ const { frontmatter } = Astro.props;
 		<Navigation/>
 		<div class = "flex justify-center flex-col items-center px-32 py-4">
 			<Content>
-                <span slot = "headercontent">{frontmatter.title}</span>
+                <span slot = "headercontent" >{frontmatter.title}</span>
                 <span slot ="headerdate">{frontmatter.date}</span>
 				<slot slot = "content"></slot>
             </Content>
