@@ -75,3 +75,7 @@ p {
     list-style-type: disc;
     padding-left: 24px;
   }
+
+  img {
+    object-fit: contain;
+  }
