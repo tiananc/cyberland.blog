@@ -1,6 +1,6 @@
 ---
 
-const allposts = await Astro.glob('../../pages/posts/*.md');
+const allposts = await Astro.glob('../../pages/posts/*.mdx');
 
 const sortedposts = allposts.sort((a, b) => {
   const dateA = new Date(a.frontmatter.date).getDate();
