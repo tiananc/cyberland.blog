@@ -16,11 +16,6 @@ h2 {
     a:hover {
       @apply underline;
     }
-
-    #web-title{
-      padding-bottom: 10px;
-      padding-right: 10px;
-    }
     #web-title a:hover {
       @apply no-underline;
       /* background-size: 500% 100%;
