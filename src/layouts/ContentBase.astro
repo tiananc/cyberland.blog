@@ -7,6 +7,8 @@ import Content from '../components/Content.astro'
 import "../styles/global.css";
 const { frontmatter } = Astro.props;
 
+import {ViewTransitions} from 'astro:transitions';
+
 ---
 
 <html lang="en">
@@ -18,6 +20,7 @@ const { frontmatter } = Astro.props;
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="../styles/global.css">
 		<title>{frontmatter.title}</title>
+		<ViewTransitions/>
 	</head>
 	<body class = "bg-light-gradient min-h-screen font-sans text-dark-blue">
 		<Header/>
